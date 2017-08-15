@@ -4,7 +4,7 @@ public class DBconnection
 {
 	
 	public static void main(String[]args) {
-   String dbUrl = "jdbc:mysql://localhost:3306/A1";
+   String dbUrl = "jdbc:mysql://localhost:3306/s1";
    String user = "root";
    String password = "";
   try {
@@ -15,11 +15,11 @@ public class DBconnection
 	  Statement myStmt = myConn.createStatement();
 	  
 	  //3. execute the query
-	  ResultSet myRs = myStmt.executeQuery("select * from login");
+	  ResultSet myRs = myStmt.executeQuery("select * from loginn");
 	  
 	  //4. process the ResultSet object
 	  while(myRs.next()) {
-		  System.out.println(myRs.getInt("lblNewLabel")+ " " + myRs.getString("lblNewLabel_1"));
+		  System.out.println(myRs.getInt("Username")+ " " + myRs.getString("Password"));
 		  }
 	  myStmt.close();
 	  myConn.close();

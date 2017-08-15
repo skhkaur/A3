@@ -1,5 +1,10 @@
 package DBconnection.java;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -11,6 +16,10 @@ import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.awt.event.ActionEvent;
 
 public class courses extends JFrame {
@@ -47,19 +56,24 @@ public class courses extends JFrame {
 		
 		JButton btnCourse = new JButton("Course 1");
 		btnCourse.addActionListener(new ActionListener() {
+			
 			public void actionPerformed(ActionEvent arg0) {
+				
+				 		
+				
+				
 				contentPane.setVisible(false);
 				course_1 cor = new course_1();
 				cor.setVisible(true);
 			}
 		});
 		btnCourse.setFont(new Font("Monospaced", Font.PLAIN, 13));
-		btnCourse.setBounds(79, 64, 125, 23);
+		btnCourse.setBounds(79, 84, 125, 23);
 		contentPane.add(btnCourse);
 		
 		JButton btnCourse_1 = new JButton("Course 2");
 		btnCourse_1.setFont(new Font("Monospaced", Font.PLAIN, 13));
-		btnCourse_1.setBounds(79, 115, 125, 23);
+		btnCourse_1.setBounds(79, 158, 125, 23);
 		contentPane.add(btnCourse_1);
 		btnCourse_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -68,30 +82,6 @@ public class courses extends JFrame {
 			cor.setVisible(true);
 		}
 		});
-		
-		JButton btnCourse_2 = new JButton("Course 3");
-		btnCourse_2.setFont(new Font("Monospaced", Font.PLAIN, 13));
-		btnCourse_2.setBounds(79, 168, 125, 23);
-		contentPane.add(btnCourse_2);
-		btnCourse_2.addActionListener(new ActionListener() {
-		public void actionPerformed(ActionEvent arg0) {
-			contentPane.setVisible(false);
-			course_3 cor = new course_3();
-			cor.setVisible(true);
-		}
-		});
-		
-		JButton btnCourse_3 = new JButton("Course 4");
-		btnCourse_3.setFont(new Font("Monospaced", Font.PLAIN, 13));
-		btnCourse_3.setBounds(79, 214, 125, 23);
-		contentPane.add(btnCourse_3);
-		btnCourse_3.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				contentPane.setVisible(false);
-				course_4 cor = new course_4();
-				cor.setVisible(true);
-			}
-			});
 		
 		JLabel lblNewLabel = new JLabel("Courses ");
 		lblNewLabel.setFont(new Font("Monospaced", Font.PLAIN, 16));

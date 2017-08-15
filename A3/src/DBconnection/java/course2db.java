@@ -10,20 +10,26 @@ public class course2db {
 	  * @param args
 	  */
 	 public static void main (String[] args) {
-		 // TODO Auto-generated method stub
-		 try
+		 String dbUrl = "jdbc:mysql://localhost:3306/s1";
+		   String user = "root";
+		   String password = "";
+		   try
+			 {
+				  Connection myConn = DriverManager.getConnection(dbUrl, user, password);
+				  
+				  //2.create a statement
+				  Statement myStmt = myConn.createStatement();
+				 String sql1="SELECT * FROM s1.course2";
+			ResultSet rs1=myStmt.executeQuery(sql1);
+			while(rs1.next())
+				System.out.println(rs1.getInt("StudentID")+ "  "+ rs1.getString("Instructor")+ "  "+ rs1.getString("Day")+"  "+ rs1.getString("Time"));
+			myConn.close();
+			 }
+		 catch(Exception e)
 		 {
-		Statement st=con.createStatement();
-		String sql1="select*from login_db";
-		ResultSet rs1=st.executeQuery(sql1);
-		while(rs1.next())
-			System.out.println("Student ID:"+ rs1.getString("Student_ID")+"/nInstructor:"+ rs1.getString("Instructor")+"/nDay:"+ rs1.getString("Day")+"/nTime:"+rs1.getString("Time"));
-			con.close();
+			 System.out.println(e);
 		 }
-	 catch(Exception e)
-	 {
-		 System.out.println(e);
-	 }
-	 // TODO Auto-generated method stub
-		 }
+		 // TODO Auto-generated method stub
+			 }
+		
 }
