@@ -4,12 +4,16 @@ import java.awt.BorderLayout;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import com.mysql.jdbc.PreparedStatement;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.sql.Connection;
@@ -22,8 +26,6 @@ import javax.swing.JTextField;
 public class course_1 extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
 
 	/**
 	 * Launch the application.
@@ -43,11 +45,12 @@ public class course_1 extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * @throws SQLException 
 	 */
-	public course_1() {
+	public course_1() throws SQLException {
 		
 
-			
+		
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -82,17 +85,84 @@ public class course_1 extends JFrame {
 		lblNewLabel_4.setBounds(125, 37, 93, 14);
 		contentPane.add(lblNewLabel_4);
 		
-		textField = new JTextField();
-		textField.setBounds(209, 83, 86, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		JLabel stdIdlbl = new JLabel("");
+		stdIdlbl.setBounds(172, 85, 115, 15);
+		contentPane.add(stdIdlbl);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(209, 124, 86, 20);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
-	}
-	}
+		JLabel instructorlbl = new JLabel("");
+		instructorlbl.setBounds(172, 127, 115, 15);
+		contentPane.add(instructorlbl);
+		
+		JLabel daylbl = new JLabel("");
+		daylbl.setBounds(172, 165, 115, 15);
+		contentPane.add(daylbl);
+		
+		JLabel timelbl = new JLabel("");
+		timelbl.setBounds(172, 206, 115, 15);
+		contentPane.add(timelbl);
+
+		//*******************************
+		ResultSet myresultset=null;
+		PreparedStatement prepstmt;
+		Connection myDBconnection =null;
+		int studentID;
+		String name;
+		
+		
+myDBconnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/s1","root","");
+		
+	    System.out.println("Connected to DB");
+	    	    
+	    String sqlQuery=("SELECT * FROM s1.course1"); // ensure that your schema name is correct.
+	    
+		 prepstmt = (PreparedStatement) myDBconnection.prepareStatement(sqlQuery);
+		 					 		 
+		 myresultset= prepstmt.executeQuery();
+												 
+		 while(myresultset.next()){
+																									 
+			if(myresultset.getString("StudentID").equals("1")){
+				
+				studentID=myresultset.getInt("StudentID");
+				stdIdlbl.setText(String.valueOf(studentID));
+							
+														 				 				 				 			 
+		 }
+			
+if(myresultset.getString("Instructor").equals("CHARLIE")){
+				
+	            name=myresultset.getString("Instructor");
+	            instructorlbl.setText(String.valueOf(name));
+			
+			
+		 }
+
+if(myresultset.getString("Day").equals("MONDAY")){
+	
+    name=myresultset.getString("Day");
+    daylbl.setText(String.valueOf(name));
+
+
+}
+
+if(myresultset.getString("Time").equals("12")){
+	
+    name=myresultset.getString("Time");
+    timelbl.setText(String.valueOf(name));
+
+
+}
+		
+		
+				
+		
+}
+	
+	}}
+
+		 
+	
+	
 			
 		
 		

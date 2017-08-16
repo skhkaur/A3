@@ -3,6 +3,7 @@ package timetable1;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 import java.awt.BorderLayout;
@@ -59,12 +60,18 @@ public class courses extends JFrame {
 			
 			public void actionPerformed(ActionEvent arg0) {
 				
-				 		
-				
+				 					
 				
 				contentPane.setVisible(false);
-				course_1 cor = new course_1();
-				cor.setVisible(true);
+				course_1 cor;
+				try {
+					cor = new course_1();
+					cor.setVisible(true);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
 			}
 		});
 		btnCourse.setFont(new Font("Monospaced", Font.PLAIN, 13));
