@@ -17,10 +17,13 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.awt.Color;
+import javax.swing.JTextField;
 
 public class course_1 extends JFrame {
 
 	private JPanel contentPane;
+	private JTextField textField;
+	private JTextField textField_1;
 
 	/**
 	 * Launch the application.
@@ -79,9 +82,15 @@ public class course_1 extends JFrame {
 		lblNewLabel_4.setBounds(125, 37, 93, 14);
 		contentPane.add(lblNewLabel_4);
 		
-		JLabel lblNewLabel_5 = new JLabel("");
-		lblNewLabel_5.setBounds(151, 86, 164, 31);
-		contentPane.add(lblNewLabel_5);
+		textField = new JTextField();
+		textField.setBounds(209, 83, 86, 20);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(209, 124, 86, 20);
+		contentPane.add(textField_1);
+		textField_1.setColumns(10);
 	}
 	}
 			
