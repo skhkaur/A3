@@ -1,4 +1,4 @@
-package DBconnection.java;
+package timetable1;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;

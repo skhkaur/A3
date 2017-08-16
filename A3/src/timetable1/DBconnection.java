@@ -1,4 +1,4 @@
-package DBconnection.java;
+package timetable1;
 import  java.sql.*;
 public class DBconnection 
 {

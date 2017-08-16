@@ -1,4 +1,4 @@
-package DBconnection.java;
+package timetable1;
 
 import java.awt.BorderLayout;
 import java.sql.Connection;
@@ -82,39 +82,10 @@ public class course_1 extends JFrame {
 		JLabel lblNewLabel_5 = new JLabel("");
 		lblNewLabel_5.setBounds(151, 86, 164, 31);
 		contentPane.add(lblNewLabel_5);
-			
-		
-		String dbUrl = "jdbc:mysql://localhost:3306/a1";
-		   String user = "root";
-		   String password = "";
-		 // TODO Auto-generated method stub
-		 try
-		 {
-			  Connection myConn = DriverManager.getConnection(dbUrl, user, password);
-			  
-			  //2.create a statement
-			  Statement myStmt = myConn.createStatement();
-			 String sql1="SELECT * FROM a1.`course2`";
-		ResultSet rs1=myStmt.executeQuery(sql1);
-		while(rs1.next()) 
-			System.out.println(rs1.getInt("Student ID")+ "  "+ rs1.getString("Instructor")+ "  "+ rs1.getString("Day")+"  "+ rs1.getString("Time"));
-	
-		if(rs1.getString("Instructor").equals("fff")) {
-			
-			String instrct=rs1.getString("Instructor");
-			lblNewLabel_5.setText("fff");	
-			
-			
-		}
-				
-		
-		myConn.close();
-		 }
-		 
-	 catch(Exception e)
-	 {
-		 System.out.println(e);
-	 }
-		
 	}
-}
+	}
+			
+		
+		
+		
+
