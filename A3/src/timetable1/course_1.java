@@ -62,22 +62,22 @@ public class course_1 extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("Student ID");
 		lblNewLabel.setFont(new Font("Monospaced", Font.PLAIN, 13));
-		lblNewLabel.setBounds(37, 85, 80, 14);
+		lblNewLabel.setBounds(58, 85, 80, 14);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Instructor");
 		lblNewLabel_1.setFont(new Font("Monospaced", Font.PLAIN, 13));
-		lblNewLabel_1.setBounds(37, 126, 93, 14);
+		lblNewLabel_1.setBounds(58, 128, 93, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Day");
 		lblNewLabel_2.setFont(new Font("Monospaced", Font.PLAIN, 13));
-		lblNewLabel_2.setBounds(37, 164, 72, 14);
+		lblNewLabel_2.setBounds(79, 165, 72, 14);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Time");
 		lblNewLabel_3.setFont(new Font("Monospaced", Font.PLAIN, 13));
-		lblNewLabel_3.setBounds(37, 205, 72, 14);
+		lblNewLabel_3.setBounds(58, 206, 72, 14);
 		contentPane.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("Course 1");
